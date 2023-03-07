@@ -1,18 +1,9 @@
-public class printFizz implements iFizz {
-    private int startNumber;
-    private int endNumber;
-
+public class printFizz extends printFizzBuzz { // Inheritance
     public printFizz(int startNumber, int endNumber) {
-        this.startNumber = startNumber;
-        this.endNumber = endNumber;
+        super(startNumber,endNumber);
     }
 
-    @Override
-    public int pFizzBuzz() {
-        return 0;
-    }
-
-    public int pFizz(){
+    public void pFizz(){
         for (int i = startNumber; i <= endNumber; i++) {
             if (i % 3 == 0) {
                 System.out.println("Fizz");
@@ -21,11 +12,5 @@ public class printFizz implements iFizz {
             }
         }
         System.out.println("\nBerikut hanya Buzz yang akan ditampilkan \n");
-        return 0;
-    }
-
-    @Override
-    public int pBuzz(){
-        return  0;
     }
 }

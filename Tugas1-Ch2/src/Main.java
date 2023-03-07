@@ -13,9 +13,3 @@ public class Main {
         buzz.pBuzz();
     }
 }
-
-class Fizz extends printFizzBuzz {
-    public Fizz(int startNumber, int endNumber) {
-        super(startNumber, endNumber);
-    }
-}

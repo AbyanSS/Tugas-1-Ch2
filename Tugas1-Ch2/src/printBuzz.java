@@ -1,20 +1,6 @@
-public class printBuzz implements iFizz{
-    private int startNumber;
-    private int endNumber;
-
+public class printBuzz extends printFizzBuzz{// Inheritance
     public printBuzz(int startNumber, int endNumber) {
-        this.startNumber = startNumber;
-        this.endNumber = endNumber;
-    }
-
-    @Override
-    public int pFizzBuzz() {
-        return 0;
-    }
-
-    @Override
-    public int pFizz() {
-        return 0;
+        super(startNumber,endNumber);
     }
 
     public int pBuzz(){
