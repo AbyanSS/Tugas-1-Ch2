@@ -2,9 +2,9 @@ public class printFizzBuzz implements  iFizz { // Interface
     public int startNumber;
     public int endNumber;
     // Enkapsulasi
-    public printFizzBuzz(int startNumber, int endNumber) {
-        this.startNumber = startNumber;
-        this.endNumber = endNumber;
+    public printFizzBuzz(int paramStartNumber, int paramEndNumber) {
+        this.startNumber = paramStartNumber;
+        this.endNumber = paramEndNumber;
     }
 
     public int pFizzBuzz(){ // Interface

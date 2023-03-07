@@ -1,6 +1,4 @@
 public class Main {
-    private int startNumber;
-    private int endNumber;
 
     public static void main(String[] args) {
         printFizzBuzz fb = new printFizzBuzz(1,50); fb.pFizzBuzz();
