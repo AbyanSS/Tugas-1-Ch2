@@ -3,7 +3,7 @@ public class printBuzz extends printFizzBuzz{// Inheritance
         super(startNumber,endNumber);
     }
 
-    public int pBuzz(){
+    public void pBuzz(){
 
         for (int i = startNumber; i <= endNumber; i++) {
             if (i % 5 == 0) {
@@ -12,6 +12,5 @@ public class printBuzz extends printFizzBuzz{// Inheritance
                 System.out.println(i);
             }
         }
-        return 0;
     }
 }
