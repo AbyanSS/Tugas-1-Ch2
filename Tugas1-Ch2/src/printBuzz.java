@@ -1,6 +1,7 @@
-public class printBuzz extends printFizzBuzz{// Inheritance
-    public printBuzz(int startNumber, int endNumber) {
-        super(startNumber,endNumber);
+class printBuzz extends printFizzBuzz{// Inheritance
+
+    public printBuzz(int paramStartNumber, int paramEndNumber) {
+        super(paramStartNumber, paramEndNumber);
     }
 
     public void pBuzz(){
