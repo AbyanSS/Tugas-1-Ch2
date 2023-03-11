@@ -1,38 +1,31 @@
-import java.io.BufferedReader;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.ArrayList;
+import java.util.Optional;
 
-public class ReadFile {
-    public static void main(String[] args) {
+public class ReadFile extends Hitung {
+    String[] row = new String[0];
+    ArrayList<Integer> list = new ArrayList();
 
-        String csvFile = "C://Users/ARJ/IdeaProjects/dirData/data_sekolah.csv";
-        String line = "";
-        String csvDelimiter = ",";
-        ArrayList<String[]> dataArrayList = new ArrayList<>();
+    public Optional<ArrayList<Integer>> reader(int hitung) throws IOException {
 
-        try (BufferedReader br = new BufferedReader(new FileReader(csvFile))) {
-
-            while ((line = br.readLine()) != null) {
-
-                String[] data = line.split(csvDelimiter);
-                dataArrayList.add(data);
-
+        try {
+            BufferedReader reader = null;
+            String line = "";
+            String regex = "[0-9]";
+            String file = "C://Users/ARJ/IdeaProjects/dirData/data_sekolah.csv";
+            reader = new BufferedReader(new FileReader(file));
+            for (int i = 1; i < hitung; i++) {
+                list.clear();
+                line = reader.readLine();
+                row = line.split(";");
+                for (int j = 1; j < row.length; j++) {
+                    if (row[j].matches(regex)) list.add(Integer.parseInt(row[j]));
+                }
             }
-
-        } catch (IOException e) {
-            e.printStackTrace();
+        } catch (Exception e) {
+            throw new IOException("File Not Found");
+            //System.out.println("File Tidak Ditemiukan");
         }
-
-        // print dataArrayList
-        for (String[] row : dataArrayList) {
-            for (String value : row) {
-                System.out.print(value + "\t");
-            }
-            System.out.println();
-        }
-
+        return Optional.ofNullable(list);
     }
-
-
 }
